@@ -7,23 +7,25 @@ const uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 
 const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-  
+var optionChar = [];
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  var optionChar = []
   passwordText.value = password;
 
 }
 // Asks for password length
 function generatePassword() {
     var passwordLength = prompt ("How long would you like the password to be?");
-    var length = parseInt(passwordLength);
+    //var length = parseInt(passwordLength);
 
     if (isNaN(passwordLength)) {
       alert("This is not a number, please type a number.");
@@ -33,8 +35,8 @@ function generatePassword() {
       alert("Password needs to be between the number 8 and 128.");
       generatePassword()
     }
-      else {
-  }
+     
+  
     
 
     // Ask for lowercase letters
@@ -64,22 +66,30 @@ function generatePassword() {
       optionChar = optionChar.concat(specialChars)
     }
   }
-  //Make possible Array
+  //Create possible password array
   var posPassword = [];
 
-  
 
-  var randomChar = optionChar[Math.floor(Math.random() * optionChar.length)];
-  posPassword.push(randomChar);
-  
-  //loop
+  // posPassword.push(randomChar);
+  //creates random password
+  var randomChar = optionChar[Math.floor(Math.random() * optionChar.passwordLength)];
+  //Adds specific characters to password
+  randomChar.unshift(optionChar[randomChar])
+
+  //loop for possible password array
   for (let index = 0; index < passwordLength; index++) {
     pickedChar.push(randomSelected(posPassword));  
   };
-  
+
+
+
+  document.getElementById("password").innerHTML = randomChar.join("")
+
+  //log the picked characters
   console.log(pickedChar)
+
   //generatePassword()
 
-  //Concat information
+
 
 
