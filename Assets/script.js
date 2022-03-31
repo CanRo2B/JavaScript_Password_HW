@@ -69,24 +69,23 @@ function generatePassword() {
   //Create possible password array
   var posPassword = [];
 
-
-  // posPassword.push(randomChar);
   //creates random password
   var randomChar = optionChar[Math.floor(Math.random() * optionChar.passwordLength)];
   //Adds specific characters to password
-  randomChar.unshift(optionChar[randomChar])
+  //randomChar.unshift(optionChar[randomChar]);
 
   //loop for possible password array
-  for (let index = 0; index < passwordLength; index++) {
-    randomChar.push(randomSelected(posPassword));  
+  for (let index = 0; index < passwordLength.length; index++) {
+    randomChar.push(randomSelected(password));  
   };
 
-
-
-  document.getElementById("password").innerHTML = randomChar.join("")
-
   //log the picked characters
-  console.log(randomChar)
+  console.log(posPassword)
+
+  //committing to the HTML document
+  document.getElementById("password").innerHTML = posPassword.join("")
+
+
 
   //generatePassword()
 
