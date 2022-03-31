@@ -78,7 +78,7 @@ function generatePassword() {
 
   //loop for possible password array
   for (let index = 0; index < passwordLength; index++) {
-    pickedChar.push(randomSelected(posPassword));  
+    randomChar.push(randomSelected(posPassword));  
   };
 
 
@@ -86,7 +86,7 @@ function generatePassword() {
   document.getElementById("password").innerHTML = randomChar.join("")
 
   //log the picked characters
-  console.log(pickedChar)
+  console.log(randomChar)
 
   //generatePassword()
 
