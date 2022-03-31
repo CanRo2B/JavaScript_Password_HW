@@ -9,12 +9,14 @@ const lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+  
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  var optionChar = []
   passwordText.value = password;
 
 }
@@ -33,37 +35,51 @@ function generatePassword() {
     }
       else {
   }
-    console.log(passwordLength)
+    
 
     // Ask for lowercase letters
-  var passwordLowercase = confirm ("Would you like to include lowercase letters in your password?")
+  var passwordLowercase = confirm ("Would you like to include lowercase letters in your password?");
     if (passwordLowercase) {
+      optionChar = optionChar.concat(lowercase)
     }
-    console.log(passwordLowercase)
+    
 
     // Ask for Uppercase letter
-  var passwordUppercase = confirm ("Click ok if you like to include uppercase letters?")
+  var passwordUppercase = confirm ("Click ok if you like to include uppercase letters?");
     if (passwordUppercase) {
+      optionChar = optionChar.concat(uppercase)
     }
-    console.log(passwordUppercase)
+    
 
     // Request a numeric integar
   var passwordNumber = confirm ("Click ok if you like to include numberic integars.");
     if (passwordNumber) {
+      optionChar = optionChar.concat(numberChars)
     }
-    console.log(passwordNumber)
+    
 
     // Asking for special characters
   var characters = confirm ("Click if you would like to inclue special characters.");
     if(characters) { 
+      optionChar = optionChar.concat(specialChars)
     }
-    console.log(characters)
   }
+  //Make possible Array
+  var posPassword = [];
 
-
-   generatePassword()
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword)
   
+
+  var randomChar = optionChar[Math.floor(Math.random() * optionChar.length)];
+  posPassword.push(randomChar);
+  
+  //loop
+  for (let index = 0; index < passwordLength; index++) {
+    pickedChar.push(randomSelected(posPassword));  
+  };
+  
+  console.log(pickedChar)
+  //generatePassword()
+
+  //Concat information
+
+
