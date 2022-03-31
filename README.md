@@ -12,7 +12,7 @@ The web page has a box in the middle with a heading of Password Generator.  It h
 
 ## Links to Portfolio
 - **[Website](https://canro2b.github.io/JavaScript_Password_HW/)**
-- **[Github Link](https://canro2b.github.io/Portfolio/)**
+- **[Github Link](https://github.com/CanRo2B/JavaScript_Password_HW)**
 
 ## Any questions, please feel free to contact me at:
 Candace Robbins
